@@ -130,10 +130,7 @@ def make_request_structured(prompt_text, additional_information_dict=None, image
 
 
     openai_api_key = get_openai_api_key()
-
     client = OpenAI(api_key=openai_api_key)
-
-   # print(json.dumps(messages, indent=2, ensure_ascii=False)) # for debug
 
     if json_schema is None:
         completion = client.beta.chat.completions.parse(

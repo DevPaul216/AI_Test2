@@ -6,20 +6,18 @@ from openai import OpenAI
 from pydantic import BaseModel
 
 def get_openai_api_key():
-    """
-    Fetch the OpenAI API key from either Streamlit secrets or a JSON configuration file.
-    """
-    try:
-        # Try to fetch the key from Streamlit secrets
+    # First try Streamlit Cloud secrets
+    if "openai_api_key" in st.secrets:
         return st.secrets["openai_api_key"]
-    except KeyError:
-        # If not found, fallback to loading from a JSON file
-        try:
-            with open("./src/config/keys.json") as f:
-                config = json.load(f)
-                return config["openai_api_key"]
-        except (FileNotFoundError, KeyError) as e:
-            raise RuntimeError("OpenAI API key not found. Please check your configuration.") from e
+    
+    # Otherwise, try local keys.json
+    try:
+        with open("./src/config/keys.json") as f:
+            config = json.load(f)
+        return config["openai_api_key"]
+    except FileNotFoundError:
+        st.error("API key not found. Please provide it via Streamlit secrets or a local keys.json file.")
+        st.stop()
 
 def make_request(prompt_text, additional_information_list=None, image_paths=None):
     messages = [

@@ -13,7 +13,10 @@ def get_openai_api_key():
     except (AttributeError, KeyError, FileNotFoundError):
         # Fall back to local JSON file
         try:
-            with open("./src/config/keys.json") as f:
+            # Construct an absolute path to the keys.json file
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            keys_file_path = os.path.join(current_dir, "config", "keys.json")
+            with open(keys_file_path) as f:
                 config = json.load(f)
             return config["openai_api_key"]
         except Exception as e:

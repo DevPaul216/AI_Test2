@@ -771,7 +771,8 @@ def end_sub_view():
 
 
 def start_sub_view():
-    data_stores_paths = Path(".\data_stores").glob("data_store_*.json")
+    data_stores_dir = os.path.join(".", "data_stores")
+    data_stores_paths = Path(data_stores_dir).glob("data_store_*.json")
     core_names = [path.stem for path in data_stores_paths]
     project_names = [str(name).split('data_store_')[1] for name in core_names]
     st.subheader("Add new Innovation Project")
@@ -800,7 +801,6 @@ def start_sub_view():
         sst.project_name = selected_project_name
         load_data_store()
         sst.sidebar_state = "expanded"
-        #st.success("Switched project")
         st.rerun()
     if selected_project_name != "default":
         add_empty_lines(2)

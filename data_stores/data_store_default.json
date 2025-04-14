@@ -5,11 +5,11 @@
         "TargetGroup": {}
     },
     "Resources": {
-        "Physical Resources": {},
-        "Human Resources": {},
-        "Financial Resources": {},
-        "Intellectual Property": {},
-        "KnowHow and Information": {}
+        "Physical Resources": [],
+        "Human Resources": [],
+        "Financial Resources": [],
+        "Intellectual Property": [],
+        "KnowHow and Information": []
     },
     "Strategic Foundation": {
         "Organization Name": {},

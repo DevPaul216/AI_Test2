@@ -20,7 +20,6 @@ def get_openai_api_key():
             st.error(f"API key not found. Error: {e}")
             st.stop()
 
-
 def make_request(prompt_text, additional_information_list=None, image_paths=None):
     messages = [
         {"role": "system", "content": prompt_text},
@@ -42,6 +41,7 @@ def make_request(prompt_text, additional_information_list=None, image_paths=None
                     },
                 ],
             })
+
     openai_api_key = get_openai_api_key()
 
     client = OpenAI(api_key=openai_api_key)
@@ -124,9 +124,8 @@ def make_request_structured(prompt_text, additional_information_dict=None, image
                     },
                 ],
             })
-    with open("./src/config/keys.json") as f:
-        config = json.load(f)
-    openai_api_key = config["openai_api_key"]
+
+    openai_api_key = get_openai_api_key()
 
     client = OpenAI(api_key=openai_api_key)
 

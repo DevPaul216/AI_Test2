@@ -26,9 +26,8 @@ def make_request(prompt_text, additional_information_list=None, image_paths=None
                     },
                 ],
             })
-    with open("./src/config/keys.json") as f:
-        config = json.load(f)
-    openai_api_key = config["openai_api_key"]
+
+    openai_api_key = st.secrets["openai_api_key"]
 
     client = OpenAI(api_key=openai_api_key)
     completion = client.chat.completions.create(

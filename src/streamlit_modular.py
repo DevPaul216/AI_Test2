@@ -66,7 +66,7 @@ def init_session_state():
 
 
 def init_page():
-    st.set_page_config(page_title="Innovation Navigator", layout="wide", page_icon="./misc/LogoFH_Notext.png",
+    st.set_page_config(page_title="Innovation Navigator", layout="wide", page_icon="misc/LogoFH_Notext.png",
                        initial_sidebar_state=sst.sidebar_state)
     st.markdown(
         """

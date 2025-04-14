@@ -33,12 +33,12 @@
         "Quote": []
     },
     "Empathy Map": {
-        "SayDo": {},
-        "See": {},
-        "Pains": {},
-        "ThinkFeel": {},
-        "Hear": {},
-        "Gains": {}
+        "SayDo": [],
+        "See": [],
+        "Pains": [],
+        "ThinkFeel": [],
+        "Hear": [],
+        "Gains": []
     },
     "PESTEL-Analysis": {
         "Political": {},

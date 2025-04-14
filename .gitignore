@@ -1,6 +1,6 @@
 #Project related files
-src/config/
-images
+#removed: src/config/
+#removed: images
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

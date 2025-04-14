@@ -66,7 +66,7 @@ def init_session_state():
 
 
 def init_page():
-    st.set_page_config(page_title="Innovation Navigator", layout="wide", page_icon="misc/LogoFH_Notext.png",
+    st.set_page_config(page_title="Innovation Navigator", layout="wide", page_icon="./misc/LogoFH_Notext.png",
                        initial_sidebar_state=sst.sidebar_state)
     st.markdown(
         """
@@ -716,84 +716,7 @@ def detail_view():
 
 def about_view():
        st.title("About")
-       st.markdown("""
-# Innovation Navigator
-
-**Innovation Navigator** is a web-based application developed in Streamlit to guide users through a structured innovation process. It is based on the Double Diamond framework (Discover, Define, Develop, Deliver), providing a systematic approach to solving complex problems and designing effective products or services.
-
----
-
-## Core Features
-
-### Project Management
-- Users can create, switch, or delete innovation projects.
-- Each project is isolated and stored as a JSON file for independent data handling.
-
-### Structured Workflow
-- The innovation process is organized into sequential templates aligned with the Double Diamond framework.
-- Templates contain elements (e.g., SWOT, value proposition) that must be completed before advancing.
-- Each element can be marked as required or optional.
-
-### Artifact Generation
-- Artifacts are structured outputs tied to template elements.
-- Users can generate artifacts via:
-  - Manual input
-  - AI-based generation using the OpenAI API
-  - Importing documents (e.g., PDFs) for content extraction
-
-### Visualization and Navigation
-- A flowchart provides a high-level view of template progress.
-- A legend displays template states (e.g., completed, in progress, blocked).
-
-### Configuration and Extensibility
-- Templates and elements are defined via external JSON files for easy customization.
-- Users can attach additional resources such as websites, documents, or search queries.
-
-### Human-Centered Design
-- Supports tools such as personas, empathy maps, and problem statements.
-- Includes frameworks like Business Model Canvas, Value Proposition Canvas, and PESTEL analysis.
-
----
-
-## OpenAI API Integration
-
-The OpenAI API is used throughout the application to support intelligent content generation and assist users in completing innovation tasks more efficiently.
-
-### AI-Driven Artifact Generation
-- Users provide context and select prompts; the API generates structured or free-form content (e.g., insights, canvases).
-- Outputs are integrated directly into the workflow.
-
-### Prompt-Based Assistance
-- Prompts are stored in the `canned_prompts` directory and guide the API in producing relevant content aligned with the innovation framework.
-
-### Schema Validation
-- JSON schemas define the expected structure of API responses to ensure consistency and integration with the UI.
-
-### Resource-Aware Context
-- Users can supply documents, URLs, or search queries, which are incorporated into prompt context to improve relevance.
-
-### Iterative Refinement
-- Generated artifacts can be edited and refined by the user to ensure alignment with their goals.
-
-### Visual Output
-- In specific components, the API is also used for image generation from textual input.
-
----
-
-## Use Cases
-
-The tool is designed for:
-- Innovation researchers and practitioners
-- Entrepreneurs validating business concepts
-- Design teams working on new products or services
-- Educators and students learning structured innovation methods
-
-By combining a robust innovation methodology with AI-driven content support, Innovation Navigator facilitates a streamlined, configurable, and user-centered approach to solving complex challenges.
-""")
-
-
-current_dir = os.path.dirname(os.path.abspath(__file__))
-logo_path = os.path.join(current_dir, "misc", "LogoFH.png")
+       st.markdown("PLACEHOLDER for general infor about the project and system and so on")
 
 
 def open_sidebar():
@@ -801,7 +724,7 @@ def open_sidebar():
 
     # Add a logo to the top of th esidebar
 
-    st.sidebar.image(logo_path, use_container_width=True)
+    st.sidebar.image(os.path.join(".", "misc", "LogoFH.png"), use_container_width=True)
 
     # Button in sidebar to go back to overview
     if st.sidebar.button(label="Overview", type="primary", use_container_width=True):

@@ -722,7 +722,7 @@ def about_view():
 def open_sidebar():
     sst.sidebar_state = "expanded"
 
-    # Add a logo to the top of th esidebar
+    # Add a logo to the top of the sidebar
 
     st.sidebar.image(os.path.join(".", "misc", "LogoFH.png"), use_container_width=True)
 

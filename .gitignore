@@ -1,5 +1,5 @@
 #Project related files
-#removed: src/config/
+src/config/
 #removed: images
 
 # Byte-compiled / optimized / DLL files
